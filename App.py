@@ -129,7 +129,7 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
-    thread = threading.Thread(target = start, args = (ui))
+    thread = threading.Thread(target = start, args = (ui,threading.active_count(),))
     thread.start()
     MainWindow.show()
     sys.exit(app.exec_())

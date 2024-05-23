@@ -1,6 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from Assets import Resources
+from server import start
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -126,5 +128,6 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    start(ui)
     MainWindow.show()
     sys.exit(app.exec_())

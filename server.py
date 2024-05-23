@@ -16,8 +16,7 @@ def start(ui):
 
     while True:
         conn, address = server.accept()
-        thread = threading.Thread(target = handle_client, args = (conn, address, ui))
-        thread.start()
+        handle_client(conn, address, ui)
         
 
 def handle_client(conn, address, ui):
@@ -33,4 +32,4 @@ def handle_client(conn, address, ui):
         time.sleep(1)  
 
 print("[STARTING] server is starting...")
-start()
+

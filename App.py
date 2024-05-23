@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from Assets import Resources
 from server import start
+import threading
 
 
 class Ui_MainWindow(object):
@@ -128,6 +129,7 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
-    start(ui)
+    thread = threading.Thread(target = start, args = (ui))
+    thread.start()
     MainWindow.show()
     sys.exit(app.exec_())
